@@ -17,7 +17,7 @@ public class ChangeController {
     private IChangeService serviceChange;
 
     @PostMapping
-    public ResponseEntity<?> cambioMoneda(@Valid  @RequestBody ChangeDTO oldCurrency) throws NoSuchFieldException {
+    public ResponseEntity<?> cambioMoneda(@Valid  @RequestBody ChangeDTO oldCurrency){
         return serviceChange.changeCurrency(oldCurrency);
     }
 }

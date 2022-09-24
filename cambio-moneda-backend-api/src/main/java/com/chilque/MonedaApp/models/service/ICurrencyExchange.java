@@ -1,5 +1,5 @@
 package com.chilque.MonedaApp.models.service;
 
 public interface ICurrencyExchange {
-    Double getCurrencyExchange(String type) throws NoSuchFieldException;
+    Double getCurrencyExchange(String type);
 }

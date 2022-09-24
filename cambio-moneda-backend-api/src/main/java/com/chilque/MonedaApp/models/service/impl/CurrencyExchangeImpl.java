@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class CurrencyExchangeImpl implements ICurrencyExchange {
     @Override
-    public Double getCurrencyExchange(String type) throws NoSuchFieldException {
+    public Double getCurrencyExchange(String type){
         String urlBase = "https://api.apis.net.pe/v1/tipo-cambio-sunat";
         RestTemplate restTemplate = new RestTemplate();
         Object object = restTemplate.getForObject(urlBase, Object.class);

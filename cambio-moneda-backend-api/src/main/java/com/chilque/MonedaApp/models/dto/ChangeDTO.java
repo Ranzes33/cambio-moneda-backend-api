@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.*;
 
 
 @Setter
@@ -13,7 +13,11 @@ import javax.validation.constraints.PositiveOrZero;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChangeDTO {
+    @NotEmpty
+    @Size(min = 3, max = 3, message = "El tipo de moneda debe ser una sigla de 3 digitos, example: USD")
     private String currency;
-    @PositiveOrZero
+
+    @NotNull
+    @Positive(message = "La cantidad debe ser un valor positivo")
     private Double amount;
 }

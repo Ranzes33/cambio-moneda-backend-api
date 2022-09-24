@@ -4,5 +4,5 @@ import com.chilque.MonedaApp.models.dto.ChangeDTO;
 import org.springframework.http.ResponseEntity;
 
 public interface IChangeService {
-    ResponseEntity<?> changeCurrency(ChangeDTO oldCurrency) throws NoSuchFieldException;
+    ResponseEntity<?> changeCurrency(ChangeDTO oldCurrency);
 }

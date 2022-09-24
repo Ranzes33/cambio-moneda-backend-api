@@ -16,8 +16,8 @@ public class ChangeServiceImpl implements IChangeService {
     private ICurrencyExchange serviceCurrency;
 
     @Override
-    public ResponseEntity<?> changeCurrency(ChangeDTO oldCurrency) throws NoSuchFieldException {
-        Double currency = 0.0;
+    public ResponseEntity<?> changeCurrency(ChangeDTO oldCurrency){
+        double currency = 0.0;
         try {
             Double exchange = serviceCurrency.getCurrencyExchange(Exchange.USDToPen);
             if (oldCurrency.getCurrency().equalsIgnoreCase("PEN")){
@@ -26,7 +26,7 @@ public class ChangeServiceImpl implements IChangeService {
             else if (oldCurrency.getCurrency().equalsIgnoreCase("USD")){
                 currency = oldCurrency.getAmount() / exchange;
             }
-            else return new ResponseEntity<>("Incorrect currency", HttpStatus.BAD_REQUEST);
+            else return new ResponseEntity<>("Incorrect currency, use USD or PEN", HttpStatus.BAD_REQUEST);
         }catch (Exception e){
             e.printStackTrace();
         }
