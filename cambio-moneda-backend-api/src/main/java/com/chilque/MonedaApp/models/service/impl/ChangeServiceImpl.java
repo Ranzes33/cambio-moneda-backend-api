@@ -34,7 +34,7 @@ public class ChangeServiceImpl implements IChangeService {
         Double currency = 0.0;
         try {
             Double exchange = serviceCurrency.getCurrencyExchange(Exchange.penToUSD);
-            if (oldCurrency.getCurrency().equalsIgnoreCase("PEN")){
+            if (oldCurrency.getCurrency().equalsIgnoreCase("USD")){
 
                 currency = oldCurrency.getAmount() / exchange;
             }
